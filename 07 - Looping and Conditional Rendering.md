@@ -169,15 +169,8 @@ const SongList = () => {
     let [showAll, setShowAll] = useState(true);
     let [songs, setSongs] = useState(initialSongs);
 
-    const addVote = (artist) => {
-        let newSongs = songs.map( it => {
-            if (it.artist === artist) {
-                return {...it, votes: it.votes + 1};
-            }
-            else {
-                return it;
-            }
-        });
+    const addVote = (id) => {
+        const newSongs = songs.map( (song,idx) => idx == id? {...song, votes: song.votes + 1} : song);
         setSongs(newSongs);
     }
 
@@ -190,11 +183,11 @@ const SongList = () => {
             <h2>Your favourite songs are:</h2>
             <ul>
                 {showAll &&
-                    songs.map((song, index) => <Song key={index} song={song} recordVote={addVote}/>)
+                    songs.map((song, index) => <Song key={index} song={song} recordVote={addVote} id={index}/>)
                 }
 
                 {!showAll &&
-                    songs.filter(it => it.votes >=2).map((song, index) => <Song key={index} song={song} recordVote={addVote}/>)
+                    songs.filter(it => it.votes >=2).map((song, index) => <Song key={index} song={song} recordVote={addVote} id={index}/>)
                 }
 
             </ul>
