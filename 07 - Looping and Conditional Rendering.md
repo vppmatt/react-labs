@@ -87,6 +87,7 @@ return (
 ### End of section code
 This is a sample solution to the requirements - you may have other code present from previous exercises.
 
+**SongList.js**
 ```
 const SongList = () => {
 
@@ -99,15 +100,8 @@ const SongList = () => {
 
     let [songs, setSongs] = useState(initialSongs);
 
-    const addVote = (artist) => {
-        let newSongs = songs.map( it => {
-            if (it.artist === artist) {
-                return {...it, votes: it.votes + 1};
-            }
-            else {
-                return it;
-            }
-        });
+    const addVote = (id) => {
+        const newSongs = songs.map( (song,idx) => idx == id? {...song, votes: song.votes + 1} : song);
         setSongs(newSongs);
     }
 
@@ -116,12 +110,25 @@ const SongList = () => {
             <h2>Your favourite songs are:</h2>
             <ul>
                {songs.map((song, index) => 
-                    <Song key={index} song={song} recordVote={addVote}/>)
+                    <Song key={index} song={song} recordVote={addVote} id={index} />)
                }
             </ul>
         </div>
     );
 };
+```
+
+**Song.js**
+```
+const Song = (props) => {
+
+    const voteNow = () => {
+       props.recordVote(props.id);
+    }
+ 
+    return (<li>{props.song.title} by {props.song.artist} has {props.song.votes} votes. <button onClick={voteNow}>Vote for this song</button>
+    </li>);
+ }
 ```
 
 ## 4. Use conditional rendering
