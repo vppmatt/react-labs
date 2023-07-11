@@ -82,7 +82,7 @@ return (
 
 2. In the songlist component **pass the addVote method** to the Song component using its' recordVote property.
 
-3. In the Song Component, **call the parent addVote method**, passing through the artist name. Hint: You do not want the method to be executed when the component is rendered so take care in how you impelement this.
+3. In the Song Component, **call the parent addVote method**, passing through the position in the array. Hint: You do not want the method to be executed when the component is rendered so take care in how you impelement this.
 
 ### End of section code
 This is a sample solution to the requirements - you may have other code present from previous exercises.
