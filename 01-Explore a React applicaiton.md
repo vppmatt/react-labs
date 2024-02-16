@@ -10,6 +10,10 @@ Before starting this lab, **you should have created a react applicaiton** by run
 
 ```npx create-react-app hello-world``` 
 
+or if you are using typescript
+
+```npx create-react-app hello-world --template typescript``` 
+
 This will create a new React application called "Hello World". We'll understand what `npx` is, and happens when this command is run soon.
 
 ## 1. Start the react development webserver
