@@ -24,7 +24,7 @@ const p1 = React.createElement("p", null, "This is paragraph 1");
 
 ```
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(p1, document.getElementById("root"));
+root.render(p1);
 ```
 
 4. **Start the web server** if it is not already running. You can issue this command within a terminal window of the IDE.
@@ -41,7 +41,7 @@ At this point your code should look like this:
 ```
 const p1 = React.createElement("p", null, "This is paragraph 1");
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(p1, document.getElementById("root"));
+root.render(p1);
 ```
 
 ## 2. Create child elements, with properties
@@ -67,7 +67,7 @@ const myDiv = React.createElement("div", null, [p1,p2,button]);
 4. Adjust the render line to **render the myDiv div** rather than the paragraph.
 
 ```
-root.render(myDiv, document.getElementById("root"));
+root.render(myDiv);
 ```
 5. **View the HTML page** in the browser to check it has worked
 
@@ -80,7 +80,7 @@ const p2 = React.createElement("p", null, "This is paragraph 2");
 const button = React.createElement("button",{class: "myButton"} , "this is the button");
 const myDiv = React.createElement("div", null, [p1,p2,button]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(myDiv, document.getElementById("root"));
+root.render(myDiv);
 ```
 
 ## 3. Create a more complex HTML object
@@ -101,7 +101,7 @@ const myList = React.createElement( "ul", null, [
 ]);
 const myDiv = React.createElement("div", null, [p1,p2,button, myList]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(myDiv, document.getElementById("root"));
+root.render(myDiv);
 ```
 
 ## 4. Convert the code to JSX
@@ -125,7 +125,7 @@ const myList = <ul><li>first</li><li>second</li><li>third</li></ul>;
 const myDiv = <div>{p1}{p2}{button}{myList}</div>;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(myDiv, document.getElementById("root"));
+root.render(myDiv);
 ```
 
 ## 5. Clean up
