@@ -8,13 +8,17 @@ In this lab we will see what basic react applicaiton looks like in the browser.
 
 Before starting this lab, **you should have created a react applicaiton** by running the command
 
-```npx create-react-app hello-world``` 
+```npm create vite@latest``` 
 
-or if you are using typescript
+and entering the following options:
 
-```npx create-react-app hello-world --template typescript``` 
+Project name: hello-world
 
-This will create a new React application called "Hello World". We'll understand what `npx` is, and happens when this command is run soon.
+Select a framework: React
+
+Select a variant: Either Javascript or Typescript, optionally with SWC.
+
+This will create a new React application called "Hello World". 
 
 ## 1. Start the react development webserver
 
@@ -30,13 +34,19 @@ React comes with a built in webserver designed for use in development, so we'll 
 cd hello-world
 ```
 
-2. **Start the web server** with
+2. **Get the required dependencies** that are defined in the package.json file with
 
 ```
-npm start
+npm install
 ```
 
-3. When the server tells you that the site is ready to view, **open your browser** and visit: <http://localhost:3000>
+3. **Start the web server** with
+
+```
+npm run dev
+```
+
+4. When the server tells you that the site is ready to view, **open your browser** and visit the URL that is presented (probably <http://localhost:5173>
 
 ## 2. Explore the website
 
@@ -56,6 +66,6 @@ npm start
 
 In this lab we have:
 
-* Created a new react application by running the command `npx create-react-app app-name`
+* Created a new react application by running the command `npm create vite@latest`
 * Started a web server that can transpile the code files into javascript that a browser can run with `npm start`
 * Viewed the web page in the browser, and seen that the page is made up of very litle HTML and some javascript. The javascript is executed in the browser and it generates everything we see on the page. 
