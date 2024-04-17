@@ -8,17 +8,49 @@ In this lab you will be implementing testing in the Payments UI application.
 
 You should have a running "payments ui" application.
 
-## 1. Comment out the default test and start npm test
+## 1. Install and configure the testing framework:
 
 1. Ensure the applicaiton is **not currently running**
 
-2. **Edit the file App.test.js** - right now this test will not pass, as our screen no longer says "learn react". However there are other issues with this test (it will fail to load the App component), and we will fix these later. We will exclude the test from running by **changing the method** from `test` to `test.skip`. You should also **comment out** the line that imports the App component
-
-3. Now start the testing service by running:
+2. Run the following command:
 
 ```
-npm test
+npm install jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/jest-dom identity-obj-proxy --save-dev
 ```
+
+3. Add this script to package.json
+
+```
+"test" : "jest"
+```
+
+4. Create a file called **jest.config.ts** in the root of the application with the following content:
+
+```
+export default {
+    preset: 'ts-jest',
+    testEnvironment: 'jest-environment-jsdom',
+    transform: {
+        "^.+\\.tsx?$": "ts-jest" 
+    // process `*.tsx` files with `ts-jest`
+    },
+    moduleNameMapper: {
+        "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+        '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__ mocks __/fileMock.js',
+    },
+}
+```
+
+5. Create a folder called `__mocks__` and add in the following 2 files:
+
+**fileMock.js**
+
+```module.exports = 'test-file-stub';```
+
+**styleMock.js**
+
+```module.exports = {};```
+
 
 ## 2. Create a simple test
 
@@ -30,6 +62,7 @@ For our first test, we will check that when the search box is first rendered, in
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 ```
 
 3. Create a test method that will:
@@ -41,6 +74,7 @@ When complete, the testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 import Search from "./Search";
 
 test('check search initially has no class applied to it', () => {
@@ -64,6 +98,7 @@ In this test we will check that the menu contains an entry called "find", which 
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 ```
 
 3. Create a test method that will:
@@ -76,6 +111,7 @@ When complete, the testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 import {BrowserRouter} from "react-router-dom";
 import Menu from "./Menu";
 
@@ -102,6 +138,7 @@ In this test we will check that when a user types just spaces into the search bo
 
 ```
 import userEvent from "@testing-library/user-event";
+import '@testing-library/jest-dom';
 ```
 
 3. Create a test method that will:
@@ -130,6 +167,7 @@ The code should now look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 import Search from "./Search";
 import userEvent from "@testing-library/user-event";
 
@@ -196,6 +234,7 @@ We will now test that the countrySelector component appears on the screen within
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 ```
 
 3. **Create a test method** that will:
@@ -228,6 +267,7 @@ The testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 import Transactions from "./Transactions";
 import {BrowserRouter} from "react-router-dom";
 
@@ -255,6 +295,7 @@ The final testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom';
 import Transactions from "./Transactions";
 import {BrowserRouter} from "react-router-dom";
 
