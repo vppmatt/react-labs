@@ -10,7 +10,7 @@ You should have a running "hello world" application.
 
 ## 1. Create an element
 
-For this lab we will work in the **index.js** file. Normally you would never edit this file but it's a good place for us to explore what an element is. 
+For this lab we will work in the **main.jsx** file. Normally you would never edit this file but it's a good place for us to explore what an element is. 
 
 1. We will be putting the original code back at the end, so for now, **comment out all the code in this file**, except for the import statements at the top of the page. 
 
@@ -130,7 +130,7 @@ root.render(myDiv);
 
 ## 5. Clean up
 
-To be ready for the next section, we want to put our index.js file back to the original state. Remove or comment all the code you wrote, and uncomment the original code in this file. Check that you can see the original dummy content in the browser again.
+To be ready for the next section, we want to put our main.jsx file back to the original state. Remove or comment all the code you wrote, and uncomment the original code in this file. Check that you can see the original dummy content in the browser again.
 
 
 ## Summary
