@@ -8,7 +8,7 @@ In this lab we will create our first component, and see how to place it on the w
 
 You should have a running "hello world" application that shows the dummy data contained when the application was first created.
 
-**Note: From this point on we will not ever edit index.js!**
+**Note: From this point on we will not ever edit main.jsx!**
 
 ## 1. Create the component file
 
@@ -18,7 +18,7 @@ Components sit in javascript files, however with a typical application containin
 
 2. **Create a new folder** under the components folder called "Greeting".
 
-3. **Create a new file** in the Greeting folder called "Greeting.js". Components always start with an uppercase letter and it is convention to name the file with the same name as the component it contains. 
+3. **Create a new file** in the Greeting folder called "Greeting.jsx". Components always start with an uppercase letter and it is convention to name the file with the same name as the component it contains. The files must have the .jsx extension.
 
 4. Create the outline of a **regular javascript function** in the Greeting.js file. The function should be called Greeting. You should also make it the default export function for the file.
  
@@ -93,20 +93,35 @@ export default App;
 
 For this part of the lab there is a sample solution below, but attempt the exercise before looking at it!
 
-1. Adjust the definition of the greeting component so that it **takes properties**.
+1. Adjust the definition of the greeting component so that it **takes properties**. 
 
 2. Where we have used the greeting component (in App.js), **supply 2 properties**, a name and an age.
 
 3. In the **return value** of the greeting component, change the message so that it says hello with the person's name, and tells them how old they are.
+
+4. Note that you need to define the greetings by setting Greeting.propTypes to a Javascript object
 
 ### End of section code
 At this point your code should look like this:
 
 Greeting.js
 ```
+import './Greeting.css';
+import PropTypes from 'prop-types';
 const Greeting = (props) => {
-    return (<p>Hello {props.name}. You are {props.age} years old.</p>);
+
+    return (
+        <div>
+            <p className="greeting_text"> Hello {props.name}. You are {props.age} years old. </p>
+        </div>
+    );
+}
+
+Greeting.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.string.isRequired,
 };
+
 
 export default Greeting;
 ```
@@ -127,7 +142,7 @@ export default App;
 
 ## 4. Style the component
 
-1. **Create a file** called "Greeting.css" in the same folder as the Greeting.js file.
+1. **Create a file** called "Greeting.css" in the same folder as the Greeting.jsx file.
 
 2. **Define a css class** within this file that sets the text colour to red.
 
@@ -137,7 +152,7 @@ export default App;
 }
 ```
 
-3. Import the css file into the Greeting component file. (Hint - see how the App.css file is imported into App.js)
+3. Import the css file into the Greeting component file. (Hint - see how the App.css file is imported into App.jsx)
 
 4. Apply the style the paragraph. (Hint - be careful when choosing the attribute name for the element). 
 
@@ -151,18 +166,24 @@ Greeting.css
 }
 ```
 
-Greeting.js
+Greeting.jsx
 ```
 import './Greeting.css';
-
-const Greeting = ({name,age}) => {
+import PropTypes from 'prop-types';
+const Greeting = (props) => {
 
     return (
         <div>
-            <p className="greeting_text"> Hello {name}. You are {age} years old. </p>
+            <p className="greeting_text"> Hello {props.name}. You are {props.age} years old. </p>
         </div>
     );
 }
+
+Greeting.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.string.isRequired,
+};
+
 
 export default Greeting;
 ```
