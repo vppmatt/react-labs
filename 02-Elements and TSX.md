@@ -10,7 +10,7 @@ You should have a running "hello world" application.
 
 ## 1. Create an element
 
-For this lab we will work in the **index.tsx** file. Normally you would never edit this file but it's a good place for us to explore what an element is. 
+For this lab we will work in the **main.tsx** file. Normally you would never edit this file but it's a good place for us to explore what an element is. 
 
 1. We will be putting the original code back at the end, so for now, **comment out all the code in this file**, except for the import statements at the top of the page. 
 
