@@ -8,7 +8,7 @@ In this lab we will create our first component, and see how to place it on the w
 
 You should have a running "hello world" application that shows the dummy data contained when the application was first created.
 
-**Note: From this point on we will not ever edit index.tsx!**
+**Note: From this point on we will not ever edit main.tsx! You may wish to delete the contents of index.css and app.css before going any further**
 
 ## 1. Create the component file
 
