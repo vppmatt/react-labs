@@ -15,41 +15,36 @@ You should have a running "payments ui" application.
 2. Run the following command:
 
 ```
-npm install jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/jest-dom identity-obj-proxy --save-dev
+npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
 3. Add this script to package.json
 
 ```
-"test" : "jest"
+"test" : "vitest"
 ```
 
-4. Create a file called **jest.config.ts** in the root of the application with the following content:
+4. Create a file called **setupTests.js** in the src folder with the following content:
 
 ```
-export default {
-    preset: 'ts-jest',
-    testEnvironment: 'jest-environment-jsdom',
-    transform: {
-        "^.+\\.tsx?$": "ts-jest" 
-    // process `*.tsx` files with `ts-jest`
-    },
-    moduleNameMapper: {
-        "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-        '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__ mocks __/fileMock.js',
-    },
-}
+import '@testing-library/jest-dom
+'```
+
+5. Edit the file **vite.config.js** to match the following:
+
 ```
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
 
-5. Create a folder called `__mocks__` and add in the following 2 files:
-
-**fileMock.js**
-
-```module.exports = 'test-file-stub';```
-
-**styleMock.js**
-
-```module.exports = {};```
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: 'src/setupTests.js',
+  },
+})
+```
 
 
 ## 2. Create a simple test
@@ -62,7 +57,7 @@ For our first test, we will check that when the search box is first rendered, in
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test } from 'vitest';
 ```
 
 3. Create a test method that will:
@@ -74,8 +69,9 @@ When complete, the testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test } from 'vitest';
 import Search from "./Search";
+
 
 test('check search initially has no class applied to it', () => {
     render(<Search/>);
@@ -98,7 +94,7 @@ In this test we will check that the menu contains an entry called "find", which 
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test } from 'vitest';
 ```
 
 3. Create a test method that will:
@@ -111,7 +107,7 @@ When complete, the testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test } from 'vitest';
 import {BrowserRouter} from "react-router-dom";
 import Menu from "./Menu";
 
@@ -134,11 +130,10 @@ In this test we will check that when a user types just spaces into the search bo
 
 1. **Open the file** called `Search.test.js`
 
-2. **Add the following imports** to the top of this file:
+2. **Add the following import** to the top of this file:
 
 ```
 import userEvent from "@testing-library/user-event";
-import '@testing-library/jest-dom';
 ```
 
 3. Create a test method that will:
@@ -167,7 +162,7 @@ The code should now look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test } from 'vitest'
 import Search from "./Search";
 import userEvent from "@testing-library/user-event";
 
@@ -209,7 +204,7 @@ The completed test function should look like this:
 
 ```
 test('search data is correctly sent to parent component', async () => {
-    const mockSetSearchTerm = jest.fn();
+    const mockSetSearchTerm = vi.fn();
     render(<Search setSearchTerm={mockSetSearchTerm} />);
 
     const input = screen.getByRole('textbox', { name: /order id:/i });
@@ -234,7 +229,7 @@ We will now test that the countrySelector component appears on the screen within
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test } from 'vitest';
 ```
 
 3. **Create a test method** that will:
@@ -246,6 +241,7 @@ At this point, the testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
+import { expect, test } from 'vitest';
 import Transactions from "./Transactions";
 import {BrowserRouter} from "react-router-dom";
 
@@ -267,11 +263,11 @@ The testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test, vi } from 'vitest';
 import Transactions from "./Transactions";
 import {BrowserRouter} from "react-router-dom";
 
-jest.mock('../../../data/DataFunctions', () => {
+vi.mock('../../../data/DataFunctions', () => {
     return {
         getCountries: () => Promise.resolve({data: ['a', 'b', 'c']})
     };
@@ -295,11 +291,11 @@ The final testing code should look like this:
 
 ```
 import {render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { expect, test, vi} from 'vitest';
 import Transactions from "./Transactions";
 import {BrowserRouter} from "react-router-dom";
 
-jest.mock('../../../data/DataFunctions', () => {
+vi.mock('../../../data/DataFunctions', () => {
     return {
         getCountries: () => Promise.resolve({data: ['a', 'b', 'c']})
     };
