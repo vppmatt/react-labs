@@ -63,10 +63,10 @@ const CanDrink = (props: CanDrinkProps): JSX.Element => {
   return (
     <ul>
       <li>
-        {props.name}, you can{props.age > 18 ? "" : "'t"} drink in the UK
+        {props.name}, you can{props.age >= 18 ? "" : "'t"} drink in the UK
       </li>
       <li>
-        {props.name}, you can{props.age > 21 ? "" : "'t"} drink in Texas
+        {props.name}, you can{props.age >= 21 ? "" : "'t"} drink in Texas
       </li>
     </ul>
   );
