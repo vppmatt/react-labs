@@ -129,10 +129,6 @@ function App() {
   );
 }
 
-export type PersonType = {
-  name: string;
-  age: number;
-};
 
 export default App;
 
