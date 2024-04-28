@@ -30,7 +30,7 @@ root.render(p1);
 4. **Start the web server** if it is not already running. You can issue this command within a terminal window of the IDE.
 
 ```
-npm start
+npm run dev
 ```
 
 5. **View the browser page** and check that the text appears on the screen. View the **page source** and then look a the browser's DOM by **inspecting** the page.
