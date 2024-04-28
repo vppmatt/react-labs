@@ -189,9 +189,9 @@ import Greeting from './components/Greeting/Greeting'
 function App() {
   return (
     <div>
-        <Greeting name="Matt" age="21"/>
-        <Greeting name="Sally" age="27"/>
-        <Greeting name="Mike" age="24"/>
+        <Greeting name="Matt" age={21}/>
+        <Greeting name="Sally" age={27}/>
+        <Greeting name="Mike" age={24}/>
     </div>
   );
 }
