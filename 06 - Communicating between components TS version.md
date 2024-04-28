@@ -32,8 +32,8 @@ This is a sample solution to the requirements - you may have other code present 
 ```
 const SongList = () : ReactElement => {
     
-    let [song1, setSong1] = useState<SongType>({title : 'Last thing on my mind', artist: 'steps'});
-    let [song2, setSong2] = useState<SongType>({title : 'If you\'re over me', artist: 'Years and years'});
+    const [song1, setSong1] = useState<SongType>({title : 'Last thing on my mind', artist: 'steps'});
+    const [song2, setSong2] = useState<SongType>({title : 'If you\'re over me', artist: 'Years and years'});
 
     const changeSong = () : void => {
         setSong1({...song1, title : 'Something in your eyes'});
