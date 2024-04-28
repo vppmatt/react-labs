@@ -71,7 +71,7 @@ return (
         <div>
             <h2>Your favourite songs are:</h2>
             <ul>
-                songs.map((song, index) => <Song key={index} song={song} recordVote={() => addVote(index)}  />)
+                {songs.map((song, index) => <Song key={index} song={song} recordVote={() => addVote(index)}  />)}
             </ul>
         </div>
     );
