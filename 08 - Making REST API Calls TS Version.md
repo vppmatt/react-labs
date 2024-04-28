@@ -124,7 +124,7 @@ const Transactions = (): JSX.Element => {
                         </tr>
                         </thead>
                         <tbody>
-                            {payments.map(payment => <PaymentTableRow key={payment.id} {...payment} /> }
+                            {payments.map(payment => <PaymentTableRow key={payment.id} {...payment} />) }
                         </tbody>
                     </table>
                 </div>
