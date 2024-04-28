@@ -231,12 +231,11 @@ export const getAllPaymentsAxiosVersion = () : Promise<AxiosResponse<PaymentType
 ```
 
 const loadData = () => {
-        getAllPayments()
-           .then(data => {
-                    setPayments(data);
-                    setLoading(false);    
-                })
-          );
-    }
+    getAllPaymentsAxiosVersion()
+        .then(res => {
+                setPayments(res.data);
+                setLoading(false);    
+            })
+}
 
 ```
