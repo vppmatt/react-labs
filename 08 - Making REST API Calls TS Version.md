@@ -124,7 +124,7 @@ const Transactions = (): JSX.Element => {
                         </tr>
                         </thead>
                         <tbody>
-                            {payments.map(payment => <PaymentTableRow key={payment.id} {...payment} /> }
+                            {payments.map(payment => <PaymentTableRow key={payment.id} {...payment} />) }
                         </tbody>
                     </table>
                 </div>
@@ -231,12 +231,11 @@ export const getAllPaymentsAxiosVersion = () : Promise<AxiosResponse<PaymentType
 ```
 
 const loadData = () => {
-        getAllPayments()
-           .then(data => {
-                    setPayments(data);
-                    setLoading(false);    
-                })
-          );
-    }
+    getAllPaymentsAxiosVersion()
+        .then(res => {
+                setPayments(res.data);
+                setLoading(false);    
+            })
+}
 
 ```

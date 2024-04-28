@@ -55,7 +55,7 @@ At this point your code should look like this:
 ```
 const Greeting = (props: GreetingProps) => {
 
-    let [currentName, setCurrentName] = useState<string>(props.name);
+    const [currentName, setCurrentName] = useState<string>(props.name);
  
     const changeName = () : void => {
         setCurrentName("James");
