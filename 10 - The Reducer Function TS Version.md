@@ -48,7 +48,7 @@ import {useReducer} from "react";
 const AddTransaction = (): JSX.Element => {
     
   const initialNewTransactionState: PaymentType = {
-    id : null,
+    id : 0,
     orderId: "",
     date: new Date().toISOString().slice(0, 10),
     amount: 0,
@@ -141,7 +141,7 @@ import { PaymentType, addNewTransaction } from "../../data/DataFunctions";
 const AddTransaction = (): JSX.Element => {
 
   const initialNewTransactionState: PaymentType = {
-    id : null,
+    id : 0,
     orderId: "",
     date: new Date().toISOString().slice(0, 10),
     amount: 0,
