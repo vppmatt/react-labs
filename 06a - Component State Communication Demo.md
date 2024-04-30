@@ -49,6 +49,8 @@ export default App;
 <br>
 <br>
 <br>
+
+
 ## C2 Add props and conditional logic
 
 1. Make the CanDrink component recieve props. Remember to give the props a type.
