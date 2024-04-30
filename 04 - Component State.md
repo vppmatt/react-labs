@@ -70,9 +70,9 @@ export default App;
 
 
 
-## 1.5 triggering a re-render...
+## 1.5 Why doesnt this reflect the changes on screen?
 
-Why doesnt this reflect the changes on screen?
+
 
 ```
 const Greeting = (props: GreetingProps): JSX.Element => {
@@ -105,7 +105,8 @@ type GreetingProps = {
 
 ```
 
-
+1. Theres nothign promting react to trigger a re-render of the component.
+2. Run the component code again to re-evaluate and reflect those changes on the screen.
 
 ## 2. Create a stateful variable
 
