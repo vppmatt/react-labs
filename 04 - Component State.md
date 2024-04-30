@@ -20,6 +20,8 @@ You should have a running "hello world" application with a simple Greeting compo
 
 5. Practise clicking the birthday button and check something is getting logged to the console.
 
+6. NOTE THE DIFFERENCE IN ONCLICK
+
 ### End of section code, Greeting.tsx
 
 At this point your code should look like this:
@@ -65,6 +67,45 @@ function App() {
 
 export default App;
 ```
+
+
+
+##1.5 
+
+Why doesnt this work?
+
+```
+const Greeting = (props: GreetingProps): JSX.Element => {
+  let age: number = props.age;
+
+  const haveBirthday = () => {
+    age = age + 1;
+    console.log(age);
+  };
+
+  return (
+    <div>
+      <p>
+        Hello {props.name}. You are {age} years old.
+      </p>
+      <button onClick={haveBirthday}></button>
+    </div>
+  );
+};
+
+export default Greeting;
+
+type GreetingProps = {
+  name: string;
+  age: number;
+};
+
+
+
+
+```
+
+
 
 ## 2. Create a stateful variable
 
