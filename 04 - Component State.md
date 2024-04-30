@@ -70,9 +70,9 @@ export default App;
 
 
 
-##1.5 
+## 1.5 triggering a re-render...
 
-Why doesnt this work?
+Why doesnt this reflect the changes on screen?
 
 ```
 const Greeting = (props: GreetingProps): JSX.Element => {
