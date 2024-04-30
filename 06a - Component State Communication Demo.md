@@ -46,12 +46,20 @@ function App() {
 export default App;
 
 ```
-
+<br>
+<br>
+<br>
 ## C2 Add props and conditional logic
 
 1. Make the CanDrink component recieve props. Remember to give the props a type.
 2. Render the name property into each of the the li tags, e.g. "Tamsin, you can drink in Texas"
 3. Add the logic that will evaluate the age of the user, recieved through props, against the legal drinking ages in the UK and Texas (18 and 21, respectively) and print out whether they can or cannot drink in each of the locations.
+
+<br>
+<br>
+<br>
+
+
 
 ### End of section code
 
