@@ -15,10 +15,10 @@ You should have a running "payments ui" application.
 2. **Install react routing** by entering the following command in the terminal:
 
 ```
-npm install react-router-dom
+npm install react-router-dom --save
 ```
 
-3. **Restart the application** with `npm start`.
+3. **Restart the application** with `npm run dev`.
 
 ## 2. Set up routes for 2 pages
 
@@ -86,6 +86,7 @@ const Menu = () : JSX.Element  => {
     return (
         <ul className="nav">
             <li><Link to="/find">Find a transaction</Link></li>
+            <li><Link to="/add">Add a transaction</Link></li>
         </ul>
     );
 }
@@ -122,9 +123,10 @@ App.tsx should now look like this:
         <BrowserRouter>
             <PageHeader/>
             <Routes>
+                <Route path="/add" element={<AddTransactionPage/>} />
                 <Route path="/find" element={<FindTransactionPage/>} />
-                <Route path = "/" element={<HomePage />} />
-                <Route element={<PageNotFound />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>
     );

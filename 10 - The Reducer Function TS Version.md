@@ -16,7 +16,7 @@ You should have a running "payments ui" application, and have created the New Pa
 
 ```
   const initialNewTransactionState: PaymentType = {
-    id : null,
+    id : 0,
     orderId: "",
     date: new Date().toISOString().slice(0, 10),
     amount: 0,
@@ -48,7 +48,7 @@ import {useReducer} from "react";
 const AddTransaction = (): JSX.Element => {
     
   const initialNewTransactionState: PaymentType = {
-    id : null,
+    id : 0,
     orderId: "",
     date: new Date().toISOString().slice(0, 10),
     amount: 0,
@@ -59,7 +59,7 @@ const AddTransaction = (): JSX.Element => {
     type: "SALE",
   };
 
-  const formReducer = (state: PaymentType, data: { field: string; value: any }): PaymentType => {
+  const formReducer = (state: PaymentType, data: { field: string, value: any }): PaymentType => {
     return {...state, [data.field]: data.value};
   };
 
@@ -141,7 +141,7 @@ import { PaymentType, addNewTransaction } from "../../data/DataFunctions";
 const AddTransaction = (): JSX.Element => {
 
   const initialNewTransactionState: PaymentType = {
-    id : null,
+    id : 0,
     orderId: "",
     date: new Date().toISOString().slice(0, 10),
     amount: 0,
