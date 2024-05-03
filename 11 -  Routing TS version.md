@@ -125,8 +125,8 @@ App.tsx should now look like this:
             <Routes>
                 <Route path="/add" element={<AddTransactionPage/>} />
                 <Route path="/find" element={<FindTransactionPage/>} />
-                <Route path = "/" element={<HomePage />} />
-                <Route element={<PageNotFound />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>
     );
