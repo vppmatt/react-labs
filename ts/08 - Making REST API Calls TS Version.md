@@ -12,7 +12,7 @@ In this lab you will be seeing how we can communicate with a server over REST.
 
 3. **Call this function** from the transactions component. For now just call this somewhere near the top of the component (don't try and integrate it yet).
 
-4. In the getAllPaymentsRestVersion function, **use `fetch`** to issue a GET request to the payments server's get all transactions rest end point. (<https://payments.multicode.uk/api/payment>). Note that you need to provide the following header: `accept: application/json`.
+4. In the getAllPaymentsRestVersion function, **use `fetch`** to issue a GET request to the payments server's get all transactions rest end point. (<https://paymentsdemo.neueda.com/api/payment>). Note that you need to provide the following header: `accept: application/json`.
 
 5. **Use the `then` method** to get the response and print it out to the console.
 
@@ -25,7 +25,7 @@ This is a sample solution to the requirements - you may have other code present 
 ```
 export const getAllPaymentsRestVersion = () :void  => {
     const responsePromise : Promise<Response> =
-        fetch("https://payments.multicode.uk/api/payment",
+        fetch("https://paymentsdemo.neueda.com/api/payment",
           { method: "GET", headers : {'Accept': 'application/json'} });
     responsePromise.then(response => console.log(response));
 }
@@ -46,7 +46,7 @@ This is a sample solution to the requirements - you may have other code present 
 ```
 export const getAllPaymentsRestVersion = () :void  => {
     const responsePromise : Promise<Response> =
-          fetch("https://payments.multicode.uk/api/payment",
+          fetch("https://paymentsdemo.neueda.com/api/payment",
                { method: "GET", headers : {'Accept': 'application/json'} });
     
     responsePromise.then(response => {

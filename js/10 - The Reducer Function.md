@@ -112,7 +112,7 @@ Note that you could optionally add in some form validation, although we are not 
 
 ```
 export const addNewTransaction = (payment) => {
-    return axios({url : "https://payments.multicode.uk/api/payment",
+    return axios({url : "https://paymentsdemo.neueda.com/api/payment",
         method: "POST",
         headers : {'Accept': 'application/json', 'Content-Type' : 'application/json'},
         data: payment});
