@@ -28,7 +28,7 @@ This is a sample solution to the requirements - you may have other code present 
 
 ```
 export const getAllPaymentsRestVersion = () => {
-    const responsePromise = fetch("https://payments.multicode.uk/api/payment", {
+    const responsePromise = fetch("https://paymentsdemo.neueda.com/api/payment", {
             method: "GET",
             headers: new Headers({'Accept': 'application/json'})
     });
@@ -51,7 +51,7 @@ This is a sample solution to the requirements - you may have other code present 
 
 ```
 export const getAllPaymentsRestVersion = () => {
-    const responsePromise = fetch("https://payments.multicode.uk/api/payment", {
+    const responsePromise = fetch("https://paymentsdemo.neueda.com/api/payment", {
             method: "GET",
             headers: new Headers({'Accept': 'application/json'})
     });
@@ -90,7 +90,7 @@ This is a sample solution to the requirements - you may have other code present 
 **DataFunctions.js**
 ```
 export const getAllPaymentsFetchVersion = () => {
-    const transactionsPromise = fetch("https://payments.multicode.uk/api/payment", {
+    const transactionsPromise = fetch("https://paymentsdemo.neueda.com/api/payment", {
         method: "GET",
         headers: new Headers({'Accept': 'application/json'})
     });
@@ -231,7 +231,7 @@ This is a sample solution to the requirements - you may have other code present 
 **DataFunctions.js**
 ```
 export const getAllPayments = () => {
-    const transactionsPromise = axios({url : "https://payments.multicode.uk/api/payment", method: "GET", headers : {'Accept': 'application/json'} });
+    const transactionsPromise = axios({url : "https://paymentsdemo.neueda.com/api/payment", method: "GET", headers : {'Accept': 'application/json'} });
 
     return transactionsPromise;
 
