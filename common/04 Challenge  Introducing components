@@ -1,0 +1,21 @@
+# Lab 4 part 2 - Introducing Component Challenge
+
+## Intro
+
+In this lab you will be applying what we have learned about components to introduce new Song and SongList components
+
+## Pre-requisites
+
+You should have a running "hello world" application 
+
+## Challenge requirements
+
+1. Create a component called **Song** that takes 2 properties: title and artist. The component should render these in an <li> tag.
+
+2. Create a component called **SongList** that will output some songs within a <ul> tag. Put some kind of header text in this component.
+
+3. Place the SongList component into the App component.
+
+
+### End of section code
+Your instructor will show you where to find the sample solution to this challenge.
