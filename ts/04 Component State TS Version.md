@@ -10,7 +10,7 @@ You should have a running "hello world" application with a simple Greeting compo
 
 ## 1. Create an element to fire an event
 
-1. **Create a button** within the JSX containing the text "change my name"
+1. **Create a button** within the Greeting.tsx containing the text "change my name"
 
 2. Edit the button so that **when it is clicked**, it will run a function called "changeName"
 
