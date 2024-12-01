@@ -13,18 +13,22 @@ We will create a second type in this lab, so it would be a good idea to create a
 ## 1. Pass a stateful variable to a child component
 
 1. In the SongTypes.ts file create and export a new type called SongType, containing the name and artist for a song.
+   export type SongType = {title: string, artist: string};    
+   
+2. Also remove SongProps type from SongList.tsx and create it in SongTypes.ts file
+   export type SongProps = {song: SongType};
+   
+3. In the song list component, **create 2 local stateful javascript object variables** of type SongType called song1 and song2, each containing a title and artist name of a song.
 
-2. In the song list component, **create 2 local stateful javascript object variables** of type SongType called song1 and song2, each containing a title and artist name of a song.
+4. Change the JSX in the song list component so that it **passes a single property**, a song, to the child component.
 
-3. Change the JSX in the song list component so that it **passes a single property**, a song, to the child component.
+5. **Amend the song component** so that the information is still correctly displayed on the web page.
 
-4. **Amend the song component** so that the information is still correctly displayed on the web page.
+6. **Create a button** in the SongList component that will change the name of each song to a different one by the same artist.
 
-5. **Create a button** in the SongList component that will change the name of each song to a different one by the same artist.
+7. **Write a function** to be executed when the button is clicked that changes both songs. (Hint: use the setter methods and the spread operator). Bind the function to the button's onClick event.
 
-6. **Write a function** to be executed when the button is clicked that changes both songs. (Hint: use the setter methods and the spread operator). Bind the function to the button's onClick event.
-
-7. Check that when the button is clicked, the children are re-rendered
+8. Check that when the button is clicked, the children are re-rendered
 
 ### End of section code
 This is a sample solution to the requirements - you may have other code present from previous exercises.
