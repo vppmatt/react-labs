@@ -17,14 +17,16 @@ All the following steps should be undertaken in the song list component:
 2. **Create a list** of song objects as an array, and **make this a stateful variable**. Ensure that each song is by a different artist.
 
 3. **Remove** the previous stateful song variables
+   
+5. **Remove** the recordVote methods 
 
-4. **Amend** the addvote method to include the ID of the song to vote for as a parameter and use this to update the correct song.
+6. **Add** an addvote method to include the title of the song to vote for as a parameter and use this to update the correct song.
 
-5. Create a variable which takes the existing array and converts it to an **array of well formed JSX elements**, each with a unique key (ignore the recordVote property for now)
+7. Create a variable which takes the existing array and converts it to an **array of well formed JSX elements**, each with a unique key and pass the addVote method for value of recordVote
 
-6. **Bind the array** into the JSX returned from the components.
+8. **Bind the array** into the JSX returned from the components.
 
-7. Check that the songs are shown on the web page (note that the vote buttons won't work.)
+9. Check that the songs are shown on the web page 
 
 ### End of section code
 This is a sample solution to the requirements - you may have other code present from previous exercises.
@@ -47,7 +49,7 @@ const SongList = () => {
     }
 
     const displaySongs : JSX.Element[] = songs.map ( (song, index) => {
-         return (<Song key={index} song={song} recordVote={() => addVote(index)} />);
+         return (<Song key={index} song={song} recordVote={() => addVote(song.title)} />);
     });
 
     return (
@@ -71,7 +73,7 @@ return (
         <div>
             <h2>Your favourite songs are:</h2>
             <ul>
-                {songs.map((song, index) => <Song key={index} song={song} recordVote={() => addVote(index)}  />)}
+                {songs.map((song, index) => <Song key={index} song={song} recordVote={() => addVote(song.title)}  />)}
             </ul>
         </div>
     );
